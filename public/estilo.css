@@ -1,0 +1,99 @@
+html{
+    background-color: rgb(255, 255, 255);
+}
+
+header{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+header h1{
+    color: #41AB47;
+}
+
+header hr{
+    background-color: #41AB47;
+    height: 3px;
+    margin-right: 25%;
+    margin-left: 25%;
+    border: #41AB47;
+}
+
+.contenedor{
+    display: inline;
+    margin-right: 25%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+.column {
+    width: 100%;
+}
+
+.column50 {
+    float: left;
+    width: 50%;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form label{
+    color:  #41AB47;
+    font-weight: bold;
+    font-size: large;
+}
+
+form input{
+    margin-right: 2%;
+}
+
+form button{
+    color: white;
+    background-color:  #41AB47;
+    font-weight: bold;
+    font-size: large;
+    border: #41AB47;
+    border-radius: 10px;
+    margin-top: 3%;
+}
+
+.tarjeta{
+    margin-top: 5%;
+    margin-right: 25%;
+    margin-left: 25%;
+    background-color: #41AB47;
+    color: white;
+}
+
+.tarjeta h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+
+.tarjeta hr{
+    background-color: white;
+    height: 3px;
+    margin-right: 25%;
+    margin-left: 25%;
+    border: white;
+    margin-bottom: 4%;
+    margin-top: 0%;
+}
+
+.tarjeta h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tarjeta h3 i{
+    margin-right: 2%;
+}

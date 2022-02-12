@@ -1,43 +1,60 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.conversor = exports.comprobarValores = void 0;
-function comprobarValores(valorInicio, conversion) {
-    try {
-        if (typeof valorInicio !== "number") {
-            throw 888888;
-        }
-    }
-    catch (exception) {
-        return Number(exception);
-    }
-    try {
-        if (conversion != 0 && conversion != 1) {
-            throw 999999;
-        }
-    }
-    catch (exception) {
-        return Number(exception);
-    }
-    return conversor(valorInicio, conversion);
+exports.conversor = void 0;
+var valorResultado = 0;
+var costeConImpuesto = 0;
+var costeSinImpuesto = 0;
+var impuestoAplicado = 0;
+function iniciarConversor(valorInicio, conversion) {
+    conversor(valorInicio, conversion);
+    mostrarResultado(conversion);
 }
-exports.comprobarValores = comprobarValores;
 function conversor(valorInicio, conversion) {
     const iva = 0.21;
     const igic = 0.07;
-    let valorResultado = 0;
-    if (conversion == 0) { // IVA --> IGIC
-        let ivaAplicado = valorInicio * iva;
-        let valorSinIva = valorInicio - ivaAplicado;
-        let igicAplicado = valorSinIva * igic;
-        valorResultado = valorSinIva + igicAplicado;
+    if (conversion == "IGIC") { // IVA --> IGIC
+        costeConImpuesto = valorInicio * iva;
+        costeSinImpuesto = valorInicio - costeConImpuesto;
+        impuestoAplicado = costeSinImpuesto * igic;
+        valorResultado = costeSinImpuesto + impuestoAplicado;
     }
     else { // IGIC --> IVA
-        let igicAplicado = valorInicio * igic;
-        let valorSinIgic = valorInicio - igicAplicado;
-        let ivaAplicado = valorSinIgic * iva;
-        valorResultado = valorSinIgic + ivaAplicado;
+        costeConImpuesto = valorInicio * igic;
+        costeSinImpuesto = valorInicio - costeConImpuesto;
+        impuestoAplicado = costeSinImpuesto * iva;
+        valorResultado = costeSinImpuesto + impuestoAplicado;
     }
     return valorResultado;
 }
 exports.conversor = conversor;
-console.log(conversor(25, 1));
+function mostrarResultado(tipo) {
+    let divTarjeta = document.getElementById("tarjeta");
+    divTarjeta.innerHTML = "";
+    let resultado = `<div class='row'>
+            <div class='column'>
+                <h2> Conversión: </h2>
+                <hr>
+            </div>
+        </div>`;
+    if (tipo == "IGIC") {
+        resultado +=
+            `<div class='row'>
+                <div class='column'>
+                    <h3> <i> IVA aplicado: </i> ${costeConImpuesto} </h3>
+                    <h3> <i> Coste sin IVA: </i> ${costeSinImpuesto} </h3>
+                    <h3> <i> IGIC a aplicar: </i> ${impuestoAplicado} </h3>
+                    <h3> <i> Coste + IGIC: </i> ${valorResultado} </h3>
+                </div>`;
+    }
+    else {
+        resultado +=
+            `<div class='row'>
+                    <div class='column'>
+                        <h3> <i> IGIC aplicado: </i> ${costeConImpuesto} </h3>
+                        <h3> <i> Coste sin IGIC: </i> ${costeSinImpuesto} </h3>
+                        <h3> <i> IVA a aplicar: </i> ${impuestoAplicado} </h3>
+                        <h3> <i> Coste + IVA: </i> ${valorResultado} </h3>
+                    </div>`;
+    }
+    divTarjeta.insertAdjacentHTML('beforeend', resultado);
+}
