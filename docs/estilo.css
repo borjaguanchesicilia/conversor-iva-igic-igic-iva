@@ -97,3 +97,62 @@ form button{
 .tarjeta h3 i{
     margin-right: 2%;
 }
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+
+    html{
+        background-color: #41AB47;
+    }
+
+    header h1 {
+        color: white;
+    }
+
+    header hr {
+        margin-bottom: 10%;
+        background-color: white;
+        border: white;
+    }
+
+    .contenedor {
+        display: block;
+        text-align: center;
+        margin: 0%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contenedor form .row .column label{
+        margin-bottom: 10%;
+        color: white;
+    }
+
+    .contenedor form .row .column input{
+        width: 15%;
+    }
+
+    .contenedor form .row .column selection{
+        margin-bottom: 10%;
+    }
+
+    .contenedor form button{
+        margin-top: 10%;
+        color: #41AB47;
+        background-color: white;
+        border: white;
+    }
+
+    .contenedor .tarjeta {
+        background-color: white;
+        color: #41AB47;
+        margin: 10%;
+    }
+
+    .contenedor .tarjeta hr{
+        background-color: #41AB47;
+        border: #41AB47;
+    }
+}
