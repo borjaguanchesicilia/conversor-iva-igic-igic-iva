@@ -42,10 +42,10 @@ function mostrarResultado(tipo:string){
         resultado +=  
             `<div class='row'>
                 <div class='column'>
-                    <h3> <i> IVA aplicado: </i> ${Math.round(costeConImpuesto)} </h3>
-                    <h3> <i> Coste sin IVA: </i> ${Math.round(costeSinImpuesto)} </h3>
-                    <h3> <i> IGIC a aplicar: </i> ${Math.round(impuestoAplicado)} </h3>
-                    <h3> <i> Coste + IGIC: </i> ${Math.round(valorResultado)} </h3>
+                    <h3> <i> IVA aplicado: </i> ${redondeo(costeConImpuesto)} </h3>
+                    <h3> <i> Coste sin IVA: </i> ${redondeo(costeSinImpuesto)} </h3>
+                    <h3> <i> IGIC a aplicar: </i> ${redondeo(impuestoAplicado)} </h3>
+                    <h3> <i> Coste + IGIC: </i> ${redondeo(valorResultado)} </h3>
                 </div>`;
                     
     }
@@ -53,12 +53,18 @@ function mostrarResultado(tipo:string){
         resultado +=  
               `<div class='row'>
                     <div class='column'>
-                        <h3> <i> IGIC aplicado: </i> ${Math.round(costeConImpuesto)} </h3>
-                        <h3> <i> Coste sin IGIC: </i> ${Math.round(costeSinImpuesto)} </h3>
-                        <h3> <i> IVA a aplicar: </i> ${Math.round(impuestoAplicado)} </h3>
-                        <h3> <i> Coste + IVA: </i> ${Math.round(valorResultado)} </h3>
+                        <h3> <i> IGIC aplicado: </i> ${redondeo(costeConImpuesto)} </h3>
+                        <h3> <i> Coste sin IGIC: </i> ${redondeo(costeSinImpuesto)} </h3>
+                        <h3> <i> IVA a aplicar: </i> ${redondeo(impuestoAplicado)} </h3>
+                        <h3> <i> Coste + IVA: </i> ${redondeo(valorResultado)} </h3>
                     </div>`;
     }
 
     divTarjeta.insertAdjacentHTML('beforeend', resultado);
+}
+
+
+function redondeo(numero:number) {
+
+    return Math.round(numero  * 100) / 100;
 }
