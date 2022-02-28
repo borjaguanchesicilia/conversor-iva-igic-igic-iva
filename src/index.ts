@@ -1,4 +1,4 @@
-var valorResultado:number = 0; var costeConImpuesto:number = 0; var costeSinImpuesto:number = 0; var impuestoAplicado:number = 0;
+var valorResultado:number = 0; var impuestoAplicado:number = 0; var costeSinImpuesto:number = 0; var impuestoAplicadar:number = 0;
 
 
 function iniciarConversor(valorInicio:number, conversion:string){
@@ -9,18 +9,19 @@ function iniciarConversor(valorInicio:number, conversion:string){
 
 export function conversor(valorInicio:number, conversion:string): number{
 
-    const iva:number = 0.21;
-    const igic:number = 0.07;
+    const iva:number = 1.21; const igic:number = 1.07;
 
     if (conversion == "IGIC"){ // IVA --> IGIC
-        costeConImpuesto = valorInicio * iva;
-        costeSinImpuesto = valorInicio - costeConImpuesto;
-        impuestoAplicado = costeSinImpuesto * igic; valorResultado = costeSinImpuesto + impuestoAplicado;
+        costeSinImpuesto = valorInicio / iva;
+        impuestoAplicado = valorInicio - costeSinImpuesto;
+        impuestoAplicadar = costeSinImpuesto * (igic - 1); 
+        valorResultado = costeSinImpuesto + impuestoAplicadar;
     }     
     else{ // IGIC --> IVA
-        costeConImpuesto = valorInicio * igic;
-        costeSinImpuesto = valorInicio - costeConImpuesto;
-        impuestoAplicado = costeSinImpuesto * iva; valorResultado = costeSinImpuesto + impuestoAplicado;
+        costeSinImpuesto = valorInicio / igic;
+        impuestoAplicado = valorInicio - costeSinImpuesto;
+        impuestoAplicadar = costeSinImpuesto * (iva - 1);
+        valorResultado = costeSinImpuesto + impuestoAplicadar;
     }
 
     return valorResultado;
@@ -42,9 +43,9 @@ function mostrarResultado(tipo:string){
         resultado +=  
             `<div class='row'>
                 <div class='column'>
-                    <h3> <i> IVA aplicado: </i> ${redondeo(costeConImpuesto)} € </h3>
+                    <h3> <i> IVA aplicado: </i> ${redondeo(impuestoAplicado)} € </h3>
                     <h3> <i> Coste sin IVA: </i> ${redondeo(costeSinImpuesto)} € </h3>
-                    <h3> <i> IGIC a aplicar: </i> ${redondeo(impuestoAplicado)} € </h3>
+                    <h3> <i> IGIC a aplicar: </i> ${redondeo(impuestoAplicadar)} € </h3>
                     <h3> <i> Coste + IGIC: </i> ${redondeo(valorResultado)} € </h3>
                 </div>`;
                     
@@ -53,9 +54,9 @@ function mostrarResultado(tipo:string){
         resultado +=  
               `<div class='row'>
                     <div class='column'>
-                        <h3> <i> IGIC aplicado: </i> ${redondeo(costeConImpuesto)} € </h3>
+                        <h3> <i> IGIC aplicado: </i> ${redondeo(impuestoAplicado)} € </h3>
                         <h3> <i> Coste sin IGIC: </i> ${redondeo(costeSinImpuesto)} € </h3>
-                        <h3> <i> IVA a aplicar: </i> ${redondeo(impuestoAplicado)} € </h3>
+                        <h3> <i> IVA a aplicar: </i> ${redondeo(impuestoAplicadar)} € </h3>
                         <h3> <i> Coste + IVA: </i> ${redondeo(valorResultado)} € </h3>
                     </div>`;
     }
@@ -64,7 +65,7 @@ function mostrarResultado(tipo:string){
 }
 
 
-function redondeo(numero:number) {
+export function redondeo(numero:number) {
 
     return Math.round(numero  * 100) / 100;
 }
