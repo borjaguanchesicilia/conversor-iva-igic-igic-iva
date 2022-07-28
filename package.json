@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tests": "mocha",
-    "start": "tsc-watch --onSuccess \"node dist/index.js\""
+    "start": "tsc-watch --onSuccess \"node docs/dist/index.js\""
   },
   "repository": {
     "type": "git",
