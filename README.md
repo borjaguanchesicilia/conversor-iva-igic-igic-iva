@@ -11,9 +11,27 @@ Además, también se muestran la cantidad sin IVA y sin IGIC, así como el total
 
 ## ¿Cómo funciona?
 
-1. Se intrduce una cantidad.
-![image](https://drive.google.com/uc?export=view&id=1ppSlcGwmd1eZtBp6T247YmlR7HCwMS9)
+**1. Se intrduce una cantidad.**
 
-2. Se selecciona el tipo de impuesto que se desea aplicar.
-3. Se realiza la conversión.
-4. Se muestra el resumen de la conversión.
+<br>
+<center>
+
+  ![](https://drive.google.com/uc?export=view&id=1ppSlcGwmd1eZtBp6T247YmlR7HCwMS9-)
+</center><br>
+
+**2. Se selecciona el tipo de impuesto que se desea aplicar.**
+
+<br>
+<center>
+
+  ![](https://drive.google.com/uc?export=view&id=1zxseT6j5VqVVW_ynLj7zlg8j_aZ7FalE)
+</center>
+
+**3. Se realiza la conversión.**
+**4. Se muestra el resumen de la conversión.**
+
+<br>
+<center>
+
+  ![](https://drive.google.com/uc?export=view&id=1kENcB8QQIRjMo8vYaigD1uODwzf3Grxz)
+</center>
