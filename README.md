@@ -28,6 +28,7 @@ Además, también se muestran la cantidad sin IVA y sin IGIC, así como el total
 </center>
 
 **3. Se realiza la conversión.**
+
 **4. Se muestra el resumen de la conversión.**
 
 <br>
