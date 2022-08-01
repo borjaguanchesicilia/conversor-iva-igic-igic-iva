@@ -2,12 +2,14 @@
 
 ## ¿Qué es?
 
-Una **[aplicación web](https://borjaguanchesicilia.github.io/conversor-iva-igic-igic-iva/ "aplicación web")** que a grandes rasgos permite:
+Se trata de una aplicación web, que a grandes rasgos permite:
 
 * Quitar el IVA a una cantidad y aplicarle el IGIC.
 * Quitar el IGIC a una cantidad y aplicarle el IVA.
 
 Además, también se muestran la cantidad sin IVA y sin IGIC, así como el total de impuestos aplicados y que se aplicarán.
+
+**Aplicación $\rightarrow$ [LINK](https://borjaguanchesicilia.github.io/conversor-iva-igic-igic-iva/ "aplicación web")**
 
 ## ¿Cómo funciona?
 
